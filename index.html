@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div">
+      <form id="form" Onsubmit="evaluation(event)">
+        <input type="text" id="ip1" /><br /><br />
+        <input type="button" id="on" value=" on " Onclick="input(event)" />
+        <input type="button" value="mrc" Onclick="input(event)" />
+        <input type="button" value=" M-" Onclick="input(event)" />
+        <input type="button" value=" M+" Onclick="input(event)" /><br /><br />
+        <input type="button" value=" off " Onclick="input(event)" />
+        <input type="button" value="   .  " Onclick="input(event)" />
+        <input type="button" value=" % " Onclick="input(event)" />
+        <input
+          type="button"
+          value="   /  "
+          Onclick="input(event)"
+        /><br /><br />
+        <input type="button" value="  7  " Onclick="input(event)" />
+        <input type="button" value="  8  " Onclick="input(event)" />
+        <input type="button" value="  9 " Onclick="input(event)" />
+        <input type="button" value="  *  " Onclick="input(event)" /><br /><br />
+        <input type="button" value="  4  " Onclick="input(event)" />
+        <input type="button" value="  5  " Onclick="input(event)" />
+        <input type="button" value="  6 " Onclick="input(event)" />
+        <input
+          type="button"
+          value="   -  "
+          Onclick="input(event)"
+        /><br /><br />
+        <input type="button" value="  1  " Onclick="input(event)" />
+        <input type="button" value="  2  " Onclick="input(event)" />
+        <input type="button" value="  3 " Onclick="input(event)" />
+        <input
+          type="button"
+          id="plus"
+          value="  +  "
+          Onclick="input(event)"
+        /><br /><br />
+        <input type="button" value="  0  " Onclick="input(event)" />
+        <input type="button" value=" 00 " Onclick="input(event)" />
+        <input type="submit" value="  = " />
+        <input type="button" value=" AC" Onclick="input(event)" />
+        <br /><br />
+      </form>
+    </div>
+    <p id="op"></p>
+    <script>
+      let op = document.getElementById("op");
+      let form = document.getElementById("form");
+      form.style.padding = "18px";
+      let display = document.getElementById("ip1");
+      display.style.backgroundColor = "lightgreen";
+      display.style.height = "50px";
+      display.style.width = "159px";
+      let div = document.getElementById("div");
+      div.style.border = "solid 2px";
+      div.style.height = "320px";
+      div.style.width = "205px";
+      div.style.backgroundColor = "gray";
+      div.style.borderRadius = "20px";
+      div.style.margin = "auto";
+      let on = document.getElementById("on");
+      on.style.borderRadius = "100px";
+      function evaluation(event) {
+        event.preventDefault();
+        let res = eval(display.value);
+        display.value = res;
+      }
+      function input(event) {
+        display.value += event.target.value;
+      }
+    </script>
+  </body>
+</html>
